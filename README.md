@@ -1,4 +1,5 @@
-wow_vote_shop
+VoteShop(beta v1.0)
 =============
 
-VoteShop
+WOW build 12340 version 3.3.5 !
+Database properties item build version 12340 !
