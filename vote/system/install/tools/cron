@@ -1,0 +1,2 @@
+# путь до фаила в место /var/www/vote/
+* * * * * php -f /var/www/vote/system/libs/cron.php
