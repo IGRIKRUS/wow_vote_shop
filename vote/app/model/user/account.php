@@ -226,7 +226,7 @@ class account extends \libs\parents\Model
     }
 
     private function PassServer($login,$pass){
-        return strtoupper(sha1(strtoupper($login).':'.strtoupper($pass)));
+        return sha1(strtoupper($login).':'.strtoupper($pass));
     }
 
     private static function generate_pass_salt($len = 5) {
