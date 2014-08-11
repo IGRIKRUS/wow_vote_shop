@@ -13,7 +13,7 @@ class account extends \libs\parents\Model
             if ($account !== false) {
                 $pass_db = $this->un_pass($account['pass']);
                 $repass = $this->un_pass($this->compiled_passhash($this->PassServer($login, $pass), $pass_db['salt']));
-                if ($pass_db['pass'] == $repass['pass']) {
+                if (strtolower($pass_db['pass']) == strtolower($repass['pass'])) {
                     $this->updateDate($account['id'], $session);
                     $this->params['id'] = $account['id'];
                     $this->params['name'] = $account['name'];
@@ -29,8 +29,8 @@ class account extends \libs\parents\Model
                 } elseif ($account_server === false) {
                     $msg = 'false';
                 } else {
-                    if ($account_server['sha_pass_hash'] == $this->PassServer($login, $pass)) {
-                        $id = $this->create_account($account_server['id'], $account_server['username'], $account_server['sha_pass_hash'], $realm_id, $session,$type);
+                    if (strtolower($account_server['sha_pass_hash']) == strtolower($this->PassServer($login, $pass))) {
+                        $id = $this->create_account($account_server['id'], $account_server['username'], strtolower($account_server['sha_pass_hash']), $realm_id, $session,$type);
                         if ($id) {
                             $this->params['id'] = $id;
                             $this->params['name'] = $account_server['username'];
@@ -123,7 +123,7 @@ class account extends \libs\parents\Model
                 $id = $session->user['id'];                
                 $result = $this->Admin($id, true);
                 if ($result !== false) {
-                    if ($post['login'] != strtolower($session->user['name'])) {
+                    if ($post['login'] != $session->user['name']) {
                         $msg = Message('info', $lang->get('msg_login'));
                     }elseif($result['online'] == 1){   
                         $msg = Message('info', $lang->get('msg_online'));
@@ -260,7 +260,7 @@ class account extends \libs\parents\Model
     }
     
     public static function GeneratePassword($login,$pass){
-        return self::compiled_passhash(strtoupper(sha1(strtoupper($login).':'.strtoupper($pass))));
+        return self::compiled_passhash(sha1(strtoupper($login).':'.strtoupper($pass)));
     }
 
 

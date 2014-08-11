@@ -20,14 +20,11 @@ define('URL_PATH','http://'.$_SERVER['SERVER_NAME'].'/');
 if(version_compare(PHP_VERSION,'5.3.0','<') == true){die('<font color="red">Your version php less than 5.3.0 site to work not will!</font>');}
 
 function folder(){
-    if(isset($_SERVER['REQUEST_URI'])){
-        $folder = explode('/', $_SERVER['REQUEST_URI']);
-        if(!is_dir(DS.$folder[1])){
-            return false;
-        }
-
-        return $folder[1];
+    $folder = explode(DS, __DIR__);
+    if(!is_dir($_SERVER['DOCUMENT_ROOT'].DS.end($folder))){
+        return false;
     }
+    return end($folder);
 }
 
 if(file_exists(SYS_PATH.'libs'.DS.'Exception'.DS.'ExceptMsg.php')){
@@ -46,4 +43,3 @@ try {
     require_once APP_PATH.'view'.DS.'error.php';
 }
 ?>
-

@@ -34,7 +34,7 @@
         <div class="MessageBox">
             <h4>404 Not Found</h4>
             <hr>
-            The requested URL <?= (isset($_SERVER['REQUEST_URI'])) ? $_SERVER['REQUEST_URI'] : '/' ; ?> was not found on this server. Link <a href="<?= folder(); ?>/">Home</a>
+            The requested URL <?= (isset($_SERVER['REQUEST_URI'])) ? $_SERVER['REQUEST_URI'] : '/' ; ?> was not found on this server. Link <a href="/<?= folder(); ?>/">Home</a>
         </div>
       </div>
   </body>

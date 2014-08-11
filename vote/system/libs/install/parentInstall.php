@@ -71,7 +71,7 @@ class parentInstall
     }
     
     protected function redirect($url = '', $status = 302) {
-		header('Location: '.folder().'/' .$url);			
+		header('Location: /'.folder().'/' .$url);
     }
     
     protected function route(){

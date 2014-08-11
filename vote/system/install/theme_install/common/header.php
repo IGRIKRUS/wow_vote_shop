@@ -7,13 +7,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="/<?= $folder; ?>/app/view/<?= $style; ?>/img/wow.ico"/>
         <!-- Bootstrap core CSS -->
-        <link href="<?= $folder; ?>/app/view/<?= $style; ?>/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/<?= $folder; ?>/app/view/<?= $style; ?>/css/bootstrap.min.css" rel="stylesheet">
         <!-- Bootstrap theme -->
-        <link href="<?= $folder; ?>/app/view/<?= $style; ?>/css/style.css" rel="stylesheet">
+        <link href="/<?= $folder; ?>/app/view/<?= $style; ?>/css/style.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="<?= $folder; ?>/app/view/<?= $style; ?>/js/bootstrap.min.js"></script>
+        <script src="/<?= $folder; ?>/app/view/<?= $style; ?>/js/bootstrap.min.js"></script>
        
-        <script src="<?= $folder; ?>/app/view/<?= $style; ?>/js/script_inst.js"></script>
+        <script src="/<?= $folder; ?>/app/view/<?= $style; ?>/js/script_inst.js"></script>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

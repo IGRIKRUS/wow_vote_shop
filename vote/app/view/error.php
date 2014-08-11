@@ -34,7 +34,7 @@
         <div class="MessageBox">
             <h4>ERROR</h4>
             <hr>
-            <?= $msg->Message();?> Link <a href="<?=folder();?>">Home</a>
+            <?= $msg->Message();?> Link <a href="/<?=folder();?>">Home</a>
         </div>
       </div>
   </body>

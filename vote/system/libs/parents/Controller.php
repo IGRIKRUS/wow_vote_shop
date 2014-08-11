@@ -95,7 +95,7 @@ class Controller{
     
     protected function redirect($url = '', $status = 302) {
 		//header('Status: ' . $status);
-		header('Location: '.folder().'/' .$url);			
+		header('Location: /'.folder().'/' .$url);
     }
 
     protected function render($name , $folder = ''){
