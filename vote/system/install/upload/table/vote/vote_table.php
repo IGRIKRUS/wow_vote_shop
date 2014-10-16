@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 $table = array("
 CREATE TABLE IF NOT EXISTS `^admin` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
