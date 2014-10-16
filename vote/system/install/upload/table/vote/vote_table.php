@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS `^admin` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `id_account` int(10) NOT NULL,
   `pass` mediumblob NOT NULL,
-  `online` int(2) NOT NULL,
+  `online` int(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 ",
@@ -192,11 +192,11 @@ CREATE TABLE IF NOT EXISTS `^users` (
   `pass` mediumblob NOT NULL,
   `date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `last_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `Vp` int(10) NOT NULL,
+  `Vp` int(10) NOT NULL DEFAULT '0',
   `id_realm` int(11) NOT NULL,
   `id_acc` int(11) NOT NULL,
   `id_session` varchar(30) NOT NULL,
-  `online` int(2) NOT NULL,
+  `online` int(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`,`id_session`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 ",
