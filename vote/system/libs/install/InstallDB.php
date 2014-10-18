@@ -23,7 +23,7 @@ class InstallDB
             return mysqli_connect_error();
         } else {
             mysqli_set_charset($link, $conf['ecoding']);
-            if (!mysqli_query($link, 'CREATE DATABASE `' . $conf['base'] . '` CHARACTER SET ' . $conf['ecoding'] . ' COLLATE ' . $conf['ecoding'] . '_general_ci')) {
+            if (!mysqli_query($link, 'CREATE DATABASE  IF NOT EXISTS `' . $conf['base'] . '` CHARACTER SET ' . $conf['ecoding'] . ' COLLATE ' . $conf['ecoding'] . '_general_ci')) {
                 mysqli_close($link);
                 return @mysqli_error($link);
             }else{

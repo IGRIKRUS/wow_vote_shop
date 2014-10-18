@@ -14,7 +14,6 @@ class Installation extends \libs\install\parentInstall
                $this->not_found();
            }
        }else{
-           var_dump(URL_PATH);
            $this->redirect('start');
        }
     }
